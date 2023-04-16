@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <LeftMenu :collapsed="collapsed"/>
-    <div :class="{'main-app':true,'menu-unfold':collapsed}">
-      <Header :collapsed="collapsed" @headerClick='updateCollapsed'/>
+    <LeftMenu />
+    <div :class="{'main-app':true,'menu-unfold':$store.state.collapsed}">
+      <Header/>
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
     Header
   },
   methods: {
-    updateCollapsed(val){
+    headerClick(val){
       console.log('hand',val)
       this.collapsed=!val
     }

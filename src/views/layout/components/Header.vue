@@ -3,7 +3,7 @@
     <a-button type="primary"
               style="margin-bottom: 16px"
               @click="toggleCollapsed">
-      <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
+      <a-icon :type="$store.state.collapsed ? 'menu-unfold' : 'menu-fold'" />
     </a-button>
     <div class="breadcrumb">
       <a-breadcrumb>
@@ -33,9 +33,8 @@ export default {
 	},
   methods: {
     toggleCollapsed () {
-      //this.collapsed = !this.collapsed
-			console.log('header 被点击')
-			this.$emit('headerClick',this.collapsed)
+			console.log('store 方法被调用')
+			this.$store.dispatch('changeCollapsedAction')
     }
   }
 }

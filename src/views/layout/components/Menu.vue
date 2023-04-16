@@ -4,7 +4,7 @@
             :default-open-keys="['sub1']"
             mode="inline"
             theme="dark"
-            :inline-collapsed="collapsed">
+            :inline-collapsed="$store.state.collapsed">
       <a-menu-item key="1">
         <a-icon type="pie-chart" />
         <span>Option 1</span>
@@ -63,7 +63,7 @@ export default {
 		 },
 	},
 	mounted(){
-		console.log('a',this.collapsed)
+
 	},
   data () {
     return {
